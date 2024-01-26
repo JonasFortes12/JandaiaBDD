@@ -11,15 +11,25 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class ProductController {
+    List<String> products = new ArrayList<String>(
+            List.of("mouse", "mousepad", "keyboard", "CellPhone", "notebook", "soundbox")
+    );
 
     @GetMapping("/products")
     public List<String> getAllProducts(){
-        List<String> products;
-
-        products = new ArrayList<String>(
-                List.of("mouse", "mousepad", "keyboard", "CellPhone", "notebook", "soundbox")
-        );
-
         return products;
     }
+
+    public void AddRegisteredProduct(String newProduct){
+        products.add(newProduct);
+    }
+
+    public boolean isProductRegistered(String product){
+        return products.contains(product);
+    }
+
+    public int getProductCount(){
+        return products.size();
+    }
+
 }
