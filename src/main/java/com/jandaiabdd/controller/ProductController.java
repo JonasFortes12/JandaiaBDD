@@ -36,4 +36,8 @@ public class ProductController {
         products.remove(product);
     }
 
+    public void updateProduct(String oldProduct, String updatedProduct){
+        products.set(products.indexOf(oldProduct), updatedProduct);
+    }
+
 }
