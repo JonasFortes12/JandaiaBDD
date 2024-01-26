@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class ProductController {
     List<String> products = new ArrayList<String>(
-            List.of("mouse", "mousepad", "keyboard", "CellPhone", "notebook", "soundbox")
+            List.of("mouse", "mousepad", "keyboard", "CellPhone", "notebook", "soundbox", "Power Bank")
     );
 
     @GetMapping("/products")
@@ -30,6 +30,10 @@ public class ProductController {
 
     public int getProductCount(){
         return products.size();
+    }
+
+    public void  deleteProduct(String product){
+        products.remove(product);
     }
 
 }
