@@ -45,14 +45,15 @@ public class DeleteProductStore {
         );
     }
 
-    @And("The store should have three less product")
-    public void theStoreShouldHaveThreeLessProduct() {
+    @And("The store should have one less product")
+    public void theStoreShouldHaveOneLessProduct() {
 
         //Why 3 fewer products instead of 1 less product ?
         assertEquals(
                 "The store should have three less product",
                 productControl.getProductCount(),
-                initialCountProducts - 3
+                initialCountProducts - 1
         );
     }
+
 }
